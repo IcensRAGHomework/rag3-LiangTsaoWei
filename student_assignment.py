@@ -78,7 +78,7 @@ def generate_hw02(question, city, store_type, start_date, end_date):
 def generate_hw03(question, store_name, new_store_name, city, store_type):
     pass
     
-def demo():
+def demo(question):
     chroma_client = chromadb.PersistentClient(path=dbpath)
     openai_ef = embedding_functions.OpenAIEmbeddingFunction(
         api_key = gpt_emb_config['api_key'],
@@ -92,9 +92,8 @@ def demo():
         metadata={"hnsw:space": "cosine"},
         embedding_function=openai_ef
     )
-    
     return collection
 
-if __name__ == "__main__": 
-    last_chunk = generate_hw01()
-    print(last_chunk) 
+#if __name__ == "__main__": 
+ #   last_chunk = generate_hw01()
+  #  print(last_chunk) 
